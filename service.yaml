@@ -4,7 +4,7 @@ metadata:
   name: my-pod-service
   labels:
     app: my-label
-  namespace: frontend
+
 spec:
   type: ClusterIP
   ports:
