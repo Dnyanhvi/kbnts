@@ -3,19 +3,26 @@ kind: Deployment
 metadata:
   name: my-deployment
   labels:
-    app: my-app
+    app: studentapp
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
-      app: my-app
+      app: studentapp
   template:
     metadata:
       labels:
-        app: my-app
+        app: studentapp
     spec:
     containers:
-      - name: nginx-container
-        image: nginx:latest
-        ports:
-        - containerPort: 80
+        - name: my-container
+          image: nginx
+          ports:
+            - containerPort: 80 
+
+        - name: tomcat-container
+          image: tomcat
+          ports: 
+            - containerPort: 8080      
+  strategy:
+    type: RollingUpdate
