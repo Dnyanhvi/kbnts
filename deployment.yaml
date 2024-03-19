@@ -1,26 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-deployment
-  labels:
-    app: studentapp
+  name: example-deployment
 spec:
-  replicas: 5
+  replicas: 3
   selector:
     matchLabels:
-      app: studentapp
+      app: example
   template:
     metadata:
       labels:
-        app: studentapp
-  spec:
+        app: example
+    spec:
     containers:
-        - name: my-container
-          image: nginx
-          ports:
-            - containerPort: 80 
-
-        - name: tomcat-container
-          image: tomcat
-          ports: 
-            - containerPort: 8080      
+      - name: nginx-container
+        image: nginx
+        ports:
+        - containerPort: 80  
