@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fpod 
+  labels:
+    enc: lblone
+spec:
+    containers:
+         - name: cname
+           image: nginx
+      
